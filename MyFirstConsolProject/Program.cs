@@ -49,3 +49,67 @@ var toplam = urun1 + urun2 + urun3;
 
 Console.WriteLine("Toplam Urun Fiyati: " + toplam);
 
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+Data Types (Veri Tipleri)
+*/
+int sayi1 = 10;
+double sayi2 = 20.5;
+string metin = "Merhaba";
+bool kontrol = true;
+
+Console.WriteLine("Sayi1: " + sayi1);
+Console.WriteLine("Sayi2: " + sayi2);
+Console.WriteLine("Metin: " + metin);
+Console.WriteLine("Kontrol: " + kontrol);
+
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+String Uygulamalari
+*/
+string kursAdi = ".NET 7 ile C# Programlama Dili";
+/*
+    1 - Kaç karaktere sahiptir ?
+    2 - Hepsini kiictk harf yapiniz.
+    3 - '.' ile mi baslamaktadir?
+    4 - C# bilgisi hangi konumda bulunmaktadir?
+    5 - String 'C#' bilgisini iceriyor mu?
+    6 - 'Dili' kelimesi yerine 'Dersleri' yaziniz. (replace)
+*/
+
+
+kursAdi = kursAdi.ToLower();
+var karakterSayisi = kursAdi.Length;
+var baslangicKontrol = kursAdi.StartsWith(".");
+var cSharpKonum = kursAdi.IndexOf("c#");
+var cSharpKontrol = kursAdi.Contains("c#");
+var newKursAdi = kursAdi.Replace("dili", "dersleri");
+
+Console.WriteLine("Kurs Adi: " + kursAdi);
+Console.WriteLine("Karakter Sayisi: " + karakterSayisi);
+Console.WriteLine("Baslangic Noktasi: " + baslangicKontrol);
+Console.WriteLine("C# Konumu: " + cSharpKonum);
+Console.WriteLine("C# Kontrol: " + cSharpKontrol);
+Console.WriteLine("Yeni Kurs Adi: " + newKursAdi);
+
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+    DateTime Uygulamalari
+*/
+var simdi = DateTime.Now;
+var bugun = DateTime.Today;
+var dogumTarihi = new DateTime(2001, 4, 21);
+var yas = simdi.Year - dogumTarihi.Year;
+
+var dun = simdi.AddDays(-1);
+
+Console.WriteLine("Simdi: " + simdi);
+Console.WriteLine("Bugun: " + bugun);
+Console.WriteLine("Dun: " + dun);
+Console.WriteLine("Dogum Tarihi: " + dogumTarihi);
+Console.WriteLine("Yas: " + yas);
+
+Console.WriteLine("\n-----------------------------\n");
