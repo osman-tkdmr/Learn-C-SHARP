@@ -112,4 +112,79 @@ Console.WriteLine("Dun: " + dun);
 Console.WriteLine("Dogum Tarihi: " + dogumTarihi);
 Console.WriteLine("Yas: " + yas);
 
+
 Console.WriteLine("\n-----------------------------\n");
+
+/*
+    Diziler (Arrays)
+*/
+
+
+string[] ogrenciler = new string[3];
+int[] notlar = new int[3];
+
+for(int i = 0; i < ogrenciler.Length; i++)
+{
+    Console.Write($"{i + 1}. ogrencinin adi:");
+    ogrenciler[i] = Console.ReadLine() ?? string.Empty;
+    Console.Write($"{i + 1}. ogrencinin notu:");
+    notlar[i] = Convert.ToSByte(Console.ReadLine() ?? "0");
+}
+
+
+for(int i = 0; i < ogrenciler.Length; i++)
+{
+    Console.WriteLine($"{ogrenciler[i]} - {notlar[i]}");
+}
+
+var avgNot = notlar.Average();
+Console.WriteLine("Ortalama Not: " + avgNot);
+
+// or with Multidimensional Array
+
+Console.WriteLine("\n-----------------------------\n");
+string[,] ogrenciBilgileri = new string[3, 2];
+for(int i = 0; i < ogrenciBilgileri.GetLength(0); i++)
+{
+    Console.Write($"{i + 1}. ogrencinin adi:");
+    ogrenciBilgileri[i, 0] = Console.ReadLine() ?? string.Empty;
+    Console.Write($"{i + 1}. ogrencinin notu:");
+    ogrenciBilgileri[i, 1] = Console.ReadLine() ?? "0";
+}
+
+for(int i = 0; i < ogrenciBilgileri.GetLength(0); i++)
+{
+    Console.WriteLine($"{ogrenciBilgileri[i, 0]} - {ogrenciBilgileri[i, 1]}");
+
+}
+
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+    Aritmetik Operatorler
+*/
+int a = 10;
+int b = 5;
+int c = 20;
+Console.WriteLine("Toplama: " + (a + b));
+Console.WriteLine("Cikarma: " + (a - b));
+Console.WriteLine("Carpma: " + (a * b));
+Console.WriteLine("Bolme: " + (a / b));
+Console.WriteLine("Mod Alma: " + (a % b));
+
+var sonuç = (c - a)  * b;
+Console.WriteLine("Sonuc: " + sonuç);
+
+int x = a--;
+Console.WriteLine("x: " + x);
+Console.WriteLine("a: " + a);
+
+//odd and even numbers
+int number = Convert.ToInt32(Console.ReadLine() ?? "0");
+if(number % 2 == 0)
+{
+    Console.WriteLine("Cift sayi");
+}
+else
+{    Console.WriteLine("Tek sayi");
+}
