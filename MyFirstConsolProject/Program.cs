@@ -188,3 +188,76 @@ if(number % 2 == 0)
 else
 {    Console.WriteLine("Tek sayi");
 }
+
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+    Karsilastirma Operatorleri
+
+    Karsilastirma Operator Uygulamalari
+    Klavyeden girilen yas bilgisine gore oy kullanabilme durumunu inceleyiniz. 
+    Girilen bir sayinin isaretini kontrol ediniz. 
+    Girilen bir sayinin tek/cift durumunu kontrol ediniz.
+*/
+
+Console.Write("Yas bilgisi giriniz:");
+int yasBilgisi = Convert.ToInt32(Console.ReadLine() ?? "0");
+var sonuc = yasBilgisi >= 18 ? "Oy kullanabilir" : "Oy kullanamaz";
+Console.WriteLine(sonuc);
+
+Console.Write("Bir sayi giriniz:");
+int sayi = Convert.ToInt32(Console.ReadLine() ?? "0");
+var isaretSonuc = sayi > 0 ? "Pozitif" : (sayi < 0 ? "Negatif" : "Sifir");
+Console.WriteLine(isaretSonuc);
+
+Console.Write("Bir sayi giriniz:");
+int tekCiftSayi = Convert.ToInt32(Console.ReadLine() ?? "0");
+var tekCiftSonuc = tekCiftSayi % 2 == 0 ? "Cift sayi" : "Tek sayi";
+Console.WriteLine(tekCiftSonuc);
+
+Console.WriteLine("\n-----------------------------\n");
+
+/*
+    Mantiksal Operatérler Uygulamalari
+    1- Yagi 18' den büyük ya da veli izni varsa bir iste calisabilir durumunu kontrol ediniz.
+    2- Ders notu 50-100 arasindaysa gecti degilse kalsin bilgisini yazdiriniz.
+    3- Ders ortalamasi en az 70 puan ve zayifi yoksa tesekkiir belgesi alabilme durumunu kontrol ediniz.
+    4- ise girmek icin en az önlisans ya da lisans mezunu olma durumunu kontrol ediniz. Sigara kullanmama koşulu.
+    5- Uygulamaya giris kontroliini username ya da parola icin yapalim.
+*/
+
+Console.Write("Yas bilgisi giriniz:");
+int yasBilgisi2 = Convert.ToInt32(Console.ReadLine() ?? "0");
+Console.Write("Veli izni var mi? (E/H):");
+char veliIzni = Convert.ToChar(Console.ReadLine() ?? "H");
+var calisabilirSonuc = (yasBilgisi2 > 18 || veliIzni == 'E') ? "Calisabilir" : "Calisamaz";
+Console.WriteLine(calisabilirSonuc);
+
+Console.Write("Ders notu giriniz:");
+int dersNotu = Convert.ToInt32(Console.ReadLine() ?? "0");
+var gectiKaldıSonuc = (dersNotu >= 50 && dersNotu <= 100) ? "Gecti" : "Kaldı";
+Console.WriteLine(gectiKaldıSonuc);
+
+Console.Write("Ders ortalamasi giriniz:");
+int dersOrtalamasi = Convert.ToInt32(Console.ReadLine() ?? "0");
+Console.Write("Zayif var mi? (E/H):");
+char zayifVar = Convert.ToChar(Console.ReadLine() ?? "H");
+var tesekkurBelgesiSonuc = (dersOrtalamasi >= 70 && zayifVar == 'H') ? "Tesekkur belgesi alabilir" : "Tesekkur belgesi alamaz";
+Console.WriteLine(tesekkurBelgesiSonuc);
+
+Console.Write("Mezuniyet durumu (1-Önlisans, 2-Lisans):");
+int mezuniyetDurumu = Convert.ToInt32(Console.ReadLine() ?? "0");
+Console.Write("Sigara kullanıyor musunuz? (E/H):");
+char sigaraKullanimi = Convert.ToChar(Console.ReadLine() ?? "H");
+var iseGirebilirSonuc = ((mezuniyetDurumu == 1 || mezuniyetDurumu == 2) && sigaraKullanimi == 'H') ? "Ise girebilir" : "Ise giremez";
+Console.WriteLine(iseGirebilirSonuc);
+
+Console.Write("Kullanici adi giriniz:");
+string username = Console.ReadLine() ?? string.Empty;
+Console.Write("Parola giriniz:");
+string password = Console.ReadLine() ?? string.Empty;
+var girisKontrolSonuc = (username == "admin" && password == "12345") ? "Giris basarili" : "Giris basarisiz";
+Console.WriteLine(girisKontrolSonuc);
+
+Console.WriteLine("\n-----------------------------\n");
+
