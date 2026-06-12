@@ -261,3 +261,20 @@ Console.WriteLine(girisKontrolSonuc);
 
 Console.WriteLine("\n-----------------------------\n");
 
+
+/*
+    File I/O Uygulama
+    1- Klavyeden girilen bir metni "metin.txt" dosyasına yazdırınız.
+    2- "metin.txt" dosyasındaki metni okuyarak ekrana yazdırınız.
+*/  
+
+string dosyaYolu = "metin.txt";
+Console.Write("Bir metin giriniz:");
+string metin2 = Console.ReadLine() ?? string.Empty;
+File.WriteAllText(dosyaYolu, metin2);
+
+string okunanMetin = File.ReadAllText(dosyaYolu);
+Console.WriteLine("Dosyadan okunan metin: " + okunanMetin);
+
+Console.WriteLine("\n-----------------------------\n");
+
